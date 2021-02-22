@@ -11,7 +11,7 @@
         <div class="col-sm-6 col-md-8 col-lg-9 p-b-40">
 
             <div class="alert alert-success">
-                <h5>Selamat Datang <i><strong><?php echo $this->session->userdata('nama_pelanggan'); ?></strong></i></h5>
+                <h8>Selamat Datang <i><strong><?php echo $this->session->userdata('nama_pelanggan'); ?></strong></i></h8>
         </div>
 
         <?php 

@@ -85,25 +85,12 @@ echo form_open_multipart(base_url('admin/konfigurasi'),' class="form-horizontal"
 </div>
 
 <div class="form-group">
-    <label class="col-md-3 control-label">Kode Metatext</label>
-    <div class="col-md-9">
-        <textarea name="metatext" class="form-control" placeholder="Metatext"><?php echo $konfigurasi->metatext ?></textarea>
-    </div>
-</div>
-
-<div class="form-group">
     <label class="col-md-3 control-label">Deskripsi Website</label>
     <div class="col-md-9">
         <textarea name="deskripsi" class="form-control" placeholder="Deskripsi Website"><?php echo $konfigurasi->deskripsi ?></textarea>
     </div>
 </div>
 
-<div class="form-group">
-    <label class="col-md-3 control-label">Rekening Pembayaran</label>
-    <div class="col-md-9">
-        <textarea name="rekening_pembayaran" class="form-control" placeholder="Rekening Pembayaran"><?php echo $konfigurasi->rekening_pembayaran ?></textarea>
-    </div>
-</div>
 
 <div class="form-group">
     <label class="col-md-3 control-label"></label>
