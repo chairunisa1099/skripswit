@@ -12,8 +12,13 @@ class Header_transaksi_model extends CI_Model {
     // listing all header_transaksi
     public function listing()
     {
-        $this->db->select('*');
+        $this->db->select('header_transaksi.*,
+                            pelanggan.nama_pelanggan,
+                            SUM(transaksi.jumlah) AS total_item');
         $this->db->from('header_transaksi');
+        $this->db->join('transaksi', 'transaksi.kode_transaksi = header_transaksi.kode_transaksi', 'left');
+        $this->db->join('pelanggan', 'pelanggan.id_pelanggan = header_transaksi.id_pelanggan', 'left');
+        $this->db->group_by('header_transaksi.id_header_transaksi');
         $this->db->order_by('id_header_transaksi', 'desc');
         $query = $this->db->get();
         return $query->result();
@@ -27,7 +32,7 @@ class Header_transaksi_model extends CI_Model {
         $this->db->from('header_transaksi');
         $this->db->where('header_transaksi.id_pelanggan', $id_pelanggan);
         $this->db->join('transaksi', 'transaksi.kode_transaksi = header_transaksi.kode_transaksi', 'left');
-        // end join
+
         $this->db->group_by('header_transaksi.id_header_transaksi');
         $this->db->order_by('id_header_transaksi', 'desc');
         $query = $this->db->get();

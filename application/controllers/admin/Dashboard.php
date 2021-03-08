@@ -16,4 +16,6 @@ class Dashboard extends CI_Controller {
                        'isi'   => 'admin/dashboard/list');
         $this->load->view('admin/layout/wrapper', $data, FALSE);
     }
+
+    // 
 }
